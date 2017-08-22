@@ -1,0 +1,86 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:BLL="clr-namespace:BLL;assembly=BLL" mc:Ignorable="d" x:Class="WpfApplicationAdmin.MainWindow"
+        xmlns:local="clr-namespace:WpfApplicationAdmin"
+        Title="MainWindow" Height="792" Width="1359" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:ImgToBitmapImg x:Key="ConvertImgToBitmapImg"/>
+        <CollectionViewSource x:Key="utilisateurDtoViewSource" d:DesignSource="{d:DesignInstance {x:Type BLL:UtilisateurDto}, CreateList=True}"/>
+        <CollectionViewSource x:Key="repertoireDtoViewSource" d:DesignSource="{d:DesignInstance {x:Type BLL:RepertoireDto}, CreateList=True}"/>
+        <CollectionViewSource x:Key="interventionDtoViewSource" d:DesignSource="{d:DesignInstance {x:Type BLL:InterventionDto}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource utilisateurDtoViewSource}" Margin="0,0,10,0">
+        <DataGrid x:Name="utilisateurDtoDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,10,640,391" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="utilisateurDtoDataGrid_SelectionChanged" RowEditEnding="utilisateurDtoDataGrid_RowEditEnding" InitializingNewItem="utilisateurDtoDataGrid_InitializingNewItem" PreviewKeyDown="utilisateurDtoDataGrid_PreviewKeyDown" BeginningEdit="utilisateurDtoDataGrid_BeginningEdit">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nomColumn" Binding="{Binding Nom}" Header="Nom" Width="70"/>
+                <DataGridTextColumn x:Name="prenomColumn" Binding="{Binding Prenom}" Header="Prenom" Width="70"/>
+                <DataGridTextColumn x:Name="adresseColumn" Binding="{Binding Adresse}" Header="Adresse" Width="100"/>
+                <DataGridTextColumn x:Name="nTelColumn" Binding="{Binding NTel}" Header="NTel" Width="70"/>
+                <DataGridTextColumn x:Name="emailColumn" Binding="{Binding Email}" Header="Email" Width="100"/>
+                <DataGridTemplateColumn x:Name="photoColumn" Header="Photo" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Height="80" Source="{Binding Converter={StaticResource ConvertImgToBitmapImg}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="loginColumn" Binding="{Binding Login}" Header="Login" Width="70"/>
+                <DataGridTextColumn x:Name="passwordColumn" Binding="{Binding Password}" Header="Password" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="repertoireDtoDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource repertoireDtoViewSource}}" Margin="10,375,640,10" RowDetailsVisibilityMode="VisibleWhenSelected" RowEditEnding="repertoireDtoDataGrid_RowEditEnding" PreviewKeyDown="repertoireDtoDataGrid_PreviewKeyDown">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iDUtilisateurColumn" Binding="{Binding IDUtilisateur}" Header="IDUtilisateur" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="iDContactColumn" Binding="{Binding IDContact}" Header="IDContact" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nomColumn1" Binding="{Binding Nom}" Header="Nom" Width="70"/>
+                <DataGridTextColumn x:Name="prenomColumn1" Binding="{Binding Prenom}" Header="Prenom" Width="70"/>
+                <DataGridTextColumn x:Name="adresseColumn1" Binding="{Binding Adresse}" Header="Adresse" Width="100"/>
+                <DataGridTextColumn x:Name="nTelColumn1" Binding="{Binding NTel}" Header="NTel" Width="70"/>
+                <DataGridTextColumn x:Name="emailColumn1" Binding="{Binding Email}" Header="Email" Width="70"/>
+                <DataGridTemplateColumn x:Name="photoColumn1" Header="Photo" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Height="80" Source="{Binding Converter={StaticResource ConvertImgToBitmapImg}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="prioriteColumn" Binding="{Binding Priorite}" Header="Priorite" Width="50"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="interventionDtoDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource interventionDtoViewSource}}" Margin="706,10,0,411" RowDetailsVisibilityMode="VisibleWhenSelected" RowEditEnding="interventionDtoDataGrid_RowEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iDUtilisateurColumn1" Binding="{Binding IDUtilisateur}" Header="IDUtilisateur" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="iDContactColumn1" Binding="{Binding IDContact}" Header="IDContact" Width="SizeToHeader"/>
+                <DataGridTemplateColumn x:Name="dateHeureColumn" Header="Date Heure" Width="130">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock x:Name="DateHeure" Text="{Binding DateHeure, StringFormat={}{0:dd/mm/yy - hh:mm:ss tt}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="gPSLocationColumn" Binding="{Binding GPSLocation}" Header="GPSLocation" Width="100"/>
+                <DataGridTextColumn x:Name="urgenceLevelColumn" Binding="{Binding UrgenceLevel}" Header="Urgence Level" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="dataColumn" Binding="{Binding Data}" Header="Data" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="interventionDtoDataGridDT" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource interventionDtoViewSource}}" Margin="706,410,0,10" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iDUtilisateurColumn2" Binding="{Binding IDUtilisateur}" Header="IDUtilisateur" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="iDContactColumn2" Binding="{Binding IDContact}" Header="IDContact" Width="SizeToHeader"/>
+                <DataGridTemplateColumn x:Name="dateHeureColumn1" Header="Date Heure" Width="130">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock x:Name="DateHeure" Text="{Binding DateHeure, StringFormat={}{0:dd/mm/yy - hh:mm:ss tt}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="gPSLocationColumn1" Binding="{Binding GPSLocation}" Header="GPSLocation" Width="100"/>
+                <DataGridTextColumn x:Name="urgenceLevelColumn1" Binding="{Binding UrgenceLevel}" Header="Urgence Level" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="dataColumn1" Binding="{Binding Data}" Header="Data" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="BInterv" Content="Add Intervention" HorizontalAlignment="Left" Margin="980,355,0,0" VerticalAlignment="Top" Width="96" Click="BInterv_Click"/>
+    </Grid>
+</Window>

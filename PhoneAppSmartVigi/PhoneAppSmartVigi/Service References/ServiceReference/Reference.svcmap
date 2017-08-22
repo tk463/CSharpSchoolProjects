@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="38a5606f-eb8b-4643-b546-451ebd1fc8de" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:25143/ServicePhone.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicePhone.disco" MetadataType="Disco" ID="446ebd38-2878-4407-adf3-9eb2803958f1" SourceId="1" SourceUrl="http://localhost:25143/ServicePhone.svc?disco" />
+    <MetadataFile FileName="ServicePhone.wsdl" MetadataType="Wsdl" ID="8ec17518-1bf9-42bf-9ad7-ccfdc4a7001b" SourceId="1" SourceUrl="http://localhost:25143/ServicePhone.svc?wsdl" />
+    <MetadataFile FileName="ServicePhone.xsd" MetadataType="Schema" ID="844aefe1-bb4a-444b-b3df-86a4904558ad" SourceId="1" SourceUrl="http://localhost:25143/ServicePhone.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicePhone1.xsd" MetadataType="Schema" ID="ccbf4e69-e350-4acb-82b3-948d0110cda7" SourceId="1" SourceUrl="http://localhost:25143/ServicePhone.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicePhone2.xsd" MetadataType="Schema" ID="066fc89a-1f4a-4d5e-ba72-3b12e33df9e0" SourceId="1" SourceUrl="http://localhost:25143/ServicePhone.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicePhone3.xsd" MetadataType="Schema" ID="7bf9ab24-5779-4392-a39b-36a9fcdc6e51" SourceId="1" SourceUrl="http://localhost:25143/ServicePhone.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

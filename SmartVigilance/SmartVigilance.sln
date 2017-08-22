@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVigilance", "SmartVigilance\SmartVigilance.csproj", "{8795111E-AC3C-40D8-AB73-B3D25069C0EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0E4A6688-1687-4E30-9B44-DE9B45EF3BE3} = {0E4A6688-1687-4E30-9B44-DE9B45EF3BE3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceSmartVigi", "WcfServiceSmartVigi\WcfServiceSmartVigi.csproj", "{0E4A6688-1687-4E30-9B44-DE9B45EF3BE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "..\ClassLibraryDALBLL\BLL\BLL.csproj", "{33EA2915-AC01-45A3-9E2D-490BAE551293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL\DAL.csproj", "{4921ABAA-80DB-4EB5-B25D-A57F647DD085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{77B23DD2-1713-401D-8D0F-B38DFD6F5B53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8795111E-AC3C-40D8-AB73-B3D25069C0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8795111E-AC3C-40D8-AB73-B3D25069C0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8795111E-AC3C-40D8-AB73-B3D25069C0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8795111E-AC3C-40D8-AB73-B3D25069C0EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E4A6688-1687-4E30-9B44-DE9B45EF3BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4A6688-1687-4E30-9B44-DE9B45EF3BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4A6688-1687-4E30-9B44-DE9B45EF3BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4A6688-1687-4E30-9B44-DE9B45EF3BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33EA2915-AC01-45A3-9E2D-490BAE551293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33EA2915-AC01-45A3-9E2D-490BAE551293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33EA2915-AC01-45A3-9E2D-490BAE551293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33EA2915-AC01-45A3-9E2D-490BAE551293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4921ABAA-80DB-4EB5-B25D-A57F647DD085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4921ABAA-80DB-4EB5-B25D-A57F647DD085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4921ABAA-80DB-4EB5-B25D-A57F647DD085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4921ABAA-80DB-4EB5-B25D-A57F647DD085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77B23DD2-1713-401D-8D0F-B38DFD6F5B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B23DD2-1713-401D-8D0F-B38DFD6F5B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B23DD2-1713-401D-8D0F-B38DFD6F5B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B23DD2-1713-401D-8D0F-B38DFD6F5B53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

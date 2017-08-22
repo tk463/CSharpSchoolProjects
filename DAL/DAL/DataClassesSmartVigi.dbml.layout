@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClassesSmartVigi">
+  <DataContextMoniker Name="/DataClassesSmartVigiDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c276644c-04ba-4a28-8057-9eb356f7c32e" absoluteBounds="1.375, 1.75, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DataClassesSmartVigiDataContext/Utilisateurs" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f88762a6-b43e-4336-a7b4-e12c55b93a3a" absoluteBounds="1.3900000000000001, 2.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22f25807-7c99-41c1-8959-1054ce255e23" absoluteBounds="5.75, 2.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DataClassesSmartVigiDataContext/Repertoire" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e4988df-a185-43b2-8239-65e443ac3a23" absoluteBounds="5.765, 3.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 3.45755126953125); (5.75 : 3.45755126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesSmartVigiDataContext/Utilisateurs/Utilisateurs_Repertoire" />
+      <nodes>
+        <classShapeMoniker Id="c276644c-04ba-4a28-8057-9eb356f7c32e" />
+        <classShapeMoniker Id="22f25807-7c99-41c1-8959-1054ce255e23" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a1ba9cda-0bce-4a54-be22-9fee483f7d92" absoluteBounds="3.25, 6.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClassesSmartVigiDataContext/Interventions" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d6832ae0-13c7-4ce4-b922-5c0aad67b42c" absoluteBounds="3.265, 6.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 5.1651025390625); (6.75 : 7.23159912109375); (5.25 : 7.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesSmartVigiDataContext/Repertoire/Repertoire_Interventions" />
+      <nodes>
+        <classShapeMoniker Id="22f25807-7c99-41c1-8959-1054ce255e23" />
+        <classShapeMoniker Id="a1ba9cda-0bce-4a54-be22-9fee483f7d92" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApplicationAdmin.WindowIntervention"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WindowIntervention" Height="355" Width="500">
+    <Grid>
+        <TextBox x:Name="TBIDUser" HorizontalAlignment="Left" Height="23" Margin="128,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="TBIDContact" HorizontalAlignment="Left" Height="23" Margin="128,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="TBDate" HorizontalAlignment="Left" Height="23" Margin="128,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" MouseDoubleClick="TBDate_MouseDoubleClick"/>
+        <TextBox x:Name="TBGPS" HorizontalAlignment="Left" Height="23" Margin="128,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="TBUrgence" HorizontalAlignment="Left" Height="23" Margin="128,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="TBData" HorizontalAlignment="Left" Height="23" Margin="128,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="BValidate" Content="Valider" HorizontalAlignment="Left" Margin="407,147,0,0" VerticalAlignment="Top" Width="75" Click="BValidate_Click"/>
+        <Label Content="IDUtilisateur" HorizontalAlignment="Left" Margin="33,34,0,0" VerticalAlignment="Top"/>
+        <Label Content="IDContact" HorizontalAlignment="Left" Margin="33,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="33,125,0,0" VerticalAlignment="Top"/>
+        <Label Content="GPS" HorizontalAlignment="Left" Margin="33,171,0,0" VerticalAlignment="Top"/>
+        <Label Content="UrgenceLevel" HorizontalAlignment="Left" Margin="33,216,0,0" VerticalAlignment="Top"/>
+        <Label Content="Data" HorizontalAlignment="Left" Margin="33,258,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

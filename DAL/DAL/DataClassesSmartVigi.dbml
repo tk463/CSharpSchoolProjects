@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SmartVigilance" Class="DataClassesSmartVigiDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.8.252.6,65356;Initial Catalog=SmartVigilance;Persist Security Info=True;User ID=TK" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="SmartVigilanceConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Utilisateurs" Member="Utilisateurs">
+    <Type Name="Utilisateurs">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Prenom" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Adresse" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NTel" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Utilisateurs_Repertoire" Member="Repertoire" ThisKey="ID" OtherKey="IDUtilisateur" Type="Repertoire" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Repertoire" Member="Repertoire">
+    <Type Name="Repertoire">
+      <Column Name="IDUtilisateur" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDContact" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Prenom" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Adresse" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NTel" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Priorite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Repertoire_Interventions" Member="Interventions" ThisKey="IDUtilisateur,IDContact" OtherKey="IDUtilisateur,IDContact" Type="Interventions" />
+      <Association Name="Utilisateurs_Repertoire" Member="Utilisateurs" ThisKey="IDUtilisateur" OtherKey="ID" Type="Utilisateurs" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Interventions" Member="Interventions">
+    <Type Name="Interventions">
+      <Column Name="IDUtilisateur" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDContact" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateHeure" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UrgenceLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GPSLocation" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Repertoire_Interventions" Member="Repertoire" ThisKey="IDUtilisateur,IDContact" OtherKey="IDUtilisateur,IDContact" Type="Repertoire" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

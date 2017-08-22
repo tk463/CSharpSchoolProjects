@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfApplicationSysDis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="692">
+    <Grid>
+        <TextBox x:Name="TBPlayerID" HorizontalAlignment="Left" Height="23" Margin="110,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="ID Player :" HorizontalAlignment="Left" Margin="31,21,0,0" VerticalAlignment="Top"/>
+        <RichTextBox x:Name="RTBDataOut" HorizontalAlignment="Left" Height="300" Margin="31,73,0,0" VerticalAlignment="Top" Width="618">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="BGo" Content="Go" HorizontalAlignment="Left" Margin="272,25,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="BGo_Click"/>
+
+    </Grid>
+</Window>

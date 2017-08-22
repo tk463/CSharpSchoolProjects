@@ -1,0 +1,47 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneAppSmartVigi.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contient le nom de l'application et le titre de la page-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}">
+            	<Run Text="SmartVigilance"/>
+            	<LineBreak/>
+            	<Run/>
+            </TextBlock>
+            <TextBlock x:Name="TBUsername" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Text="Bonjour" Tap="TBUsername_Tap"/>
+        </StackPanel>
+
+        <!--ContentPanel - placez tout contenu supplémentaire ici-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Button x:Name="BHelp" Content="HELP !" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="200" Width="200" Background="Red" Click="BHelp_Click"/>
+            <Button x:Name="BFamille" Content="Famille" HorizontalAlignment="Left" Margin="246,10,0,0" VerticalAlignment="Top" Height="200" Width="200" Background="#FFFF9600" Click="BFamille_Click"/>
+            <Button x:Name="BOK" Content="OK sms" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Height="200" Width="200" Background="Lime" Click="BOK_Click"/>
+            <Grid HorizontalAlignment="Left" Height="150" Margin="10,420,0,0" VerticalAlignment="Top" Width="436">
+                <Button x:Name="BRaccourci1" Content="" HorizontalAlignment="Left" Height="89" Margin="37,29,0,0" VerticalAlignment="Top" Width="89" FontSize="12" BorderBrush="Black"/>
+                <Button x:Name="BRaccourci2" Content="" HorizontalAlignment="Left" Height="89" Margin="131,29,0,0" VerticalAlignment="Top" Width="89" FontSize="12" BorderBrush="Black"/>
+                <Button x:Name="BRaccourci3" Content="" HorizontalAlignment="Left" Height="89" Margin="220,29,0,0" VerticalAlignment="Top" Width="89" FontSize="12" BorderBrush="Black"/>
+                <Button x:Name="BRaccourci4" Content="" HorizontalAlignment="Left" Height="89" Margin="314,29,0,0" VerticalAlignment="Top" Width="89" FontSize="12" BorderBrush="Black"/>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

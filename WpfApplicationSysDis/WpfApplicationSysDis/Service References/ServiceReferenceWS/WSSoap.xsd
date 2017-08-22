@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WS/" targetNamespace="http://WS/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PlayerData" type="tns:PlayerData" />
+  <xs:element name="PlayerDataResponse" type="tns:PlayerDataResponse" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:element name="partie" type="tns:partie" />
+  <xs:element name="player" type="tns:player" />
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PlayerData">
+    <xs:sequence>
+      <xs:element name="playerID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PlayerDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dataOut" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dataOut">
+    <xs:sequence>
+      <xs:element name="Played" type="xs:int" />
+      <xs:element name="Wins" type="xs:int" />
+      <xs:element name="Losses" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parties" nillable="true" type="tns:partie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="partie">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateheure" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="player1" type="tns:player" />
+      <xs:element minOccurs="0" name="player2" type="tns:player" />
+      <xs:element minOccurs="0" name="status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="player">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="nickname" type="xs:string" />
+      <xs:element minOccurs="0" name="passwd" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
